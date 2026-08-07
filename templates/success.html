@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success</title>
+
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/success.css') }}">
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+
+<script
+id="MathJax-script"
+async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+<script>
+   function copyAnswer(index, button){
+    const answer = document.getElementById(
+         "answer-" + index
+    );
+    const text = answer.innerText;
+    navigator.clipboard.writeText(text)
+
+    button.innerText = "✅ Copied!";
+    setTimeout(function(){
+        button.innerText = "📋 Copy";
+    },2000);
+   }
+</script>
+
+
+
+<body>
+    <div class="bg-container">
+    <div class="bubble-field">
+        <div class="bubble c1 float1"></div>
+        <div class="bubble c2 float2"></div>
+        <div class="bubble c3 float3"></div>
+        <div class="bubble c4 float1 reverse"></div>
+        <div class="bubble c5 float2"></div>
+        <div class="bubble c6 float3 reverse"></div>
+        <div class="bubble c7 float2"></div>
+        <div class="bubble c8 float1"></div>
+        <div class="bubble c9 float3 reverse"></div>
+        <div class="bubble c10 float2"></div>
+        <div class="bubble c11 float1 reverse"></div>
+        <div class="bubble c12 float2 reverse"></div>
+        <div class="bubble c13 float3"></div>
+    </div>
+    <div class="results-container">
+        <div class="page-header">
+            <h1>📄 Question Paper Solved</h1>
+
+            <p class="filename">{{ filename }}</p>
+
+            <p class="question-count">{{ results|length }} Questions Extracted</p>
+        
+        </div>
+    <details class="paper-preview">
+
+        <summary>
+           ▼ 📄 Uploaded Question Paper
+        </summary>
+
+        <img src="{{url_for('uploaded_file', filename=filename)}}"  alt="Uploaded Paper">
+
+    </details>
+
+
+    {% if results %}
+        <h2 class="section-title">Generated Answers</h2>
+        <a
+            href="{{ url_for('download_pdf') }}"
+            class="download-btn">
+
+            ⬇ Download PDF
+
+        </a>
+    {% for question in results %}
+    <div class="question-card">
+        <div class="question-header">
+
+            <h2>Question {{ loop.index }}</h2>
+
+            <div class="question-meta">
+
+                {% if question.co %}
+                <span>{{ question.co }}</span>
+                {% endif %}
+                <span>{{ question.marks }} Marks</span>
+
+            </div>
+
+             <div class="question-actions">
+
+        <button
+            class="copy-btn"
+            onclick="copyAnswer({{ loop.index }} , this)">
+            📋 Copy
+        </button>
+
+    </div>
+        </div>
+        <div class="question-body">
+
+            <h3>Question</h3>
+
+            <p>{{ question.text }}</p>
+            <hr>
+        </div>
+        <details class="answer-body">
+            <summary>▼ 🤖 AI Generated Answer</summary>
+
+            <div
+                class="answer-content"
+                id="answer-{{ loop.index }}">
+
+                {{ question.answer_html | safe }}
+
+            </div>
+
+        </details>
+    </div>
+    {% endfor %}
+
+    {% else %}
+        <h2>No Questions Found.</h2>
+
+    {% endif %}
+
+</div>
+</body>
+</html>

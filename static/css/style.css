@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    
+    background: #f5f7fa;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    
+}
+
+.container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.card{
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0,.12);
+    text-align: center;
+}
+
+.card h1{
+
+    margin-bottom:15px;
+
+    color:#1F2937;
+
+    font-size:34px;
+
+}
+.card p{
+
+    color:#6B7280;
+
+    margin-bottom:35px;
+
+    line-height:1.6;
+
+}
+
+input[type=file]{
+
+    display: none;
+}
+
+.upload-box{
+    border: 2px dashed #2563EB;
+
+    user-select: none;
+
+    border-radius: 15px;
+
+    padding: 50px 20px;
+
+    margin-bottom: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    background: #fafbff;
+
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.upload-box:hover{
+    background: #f0f6ff;
+    border-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.upload-icon{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+    line-height: 1;
+
+}
+
+.upload-box h3{
+
+    color:#1F2937;
+
+    margin-bottom:10px;
+
+    white-space: nowrap;
+
+}
+
+.upload-box p{
+
+    color:#6B7280;
+
+    margin-bottom:10px;
+
+}
+
+.upload-box span{
+
+    color:#9CA3AF;
+
+    font-size:14px;
+
+}
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition: 
+        background .3s,
+        transform .2s;
+
+}
+
+button:hover{
+
+    background:#1D4ED8;
+    transform: translateY(-2px);
+
+}
+
+#loading-overlay{
+    display: none;
+}
+
+#loading-overlay{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255,255,255,.9);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.loader-card{
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0,.15);
+}
+
+.spinner{
+    width: 60px;
+
+    height: 60px;
+
+    margin: auto;
+
+    border: 6px solid #e5e7eb;
+
+    border-top: 6px solid #2563EB;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}

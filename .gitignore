@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+.env
+
+uploads/
+generated_pdfs/
+temp/
+
+.vscode/
+*.pyc

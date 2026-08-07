@@ -1,0 +1,361 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#d0c56323;
+
+    color:#1F2937;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    position:relative;
+}
+.bg-container{
+    position: relative;
+    background: eef1f7;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+.bubble-field{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+
+/* page cont */
+.download-btn{
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 14px 24px;
+
+    background: #2563EB;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+
+    transition: .25s;
+}
+
+.download-btn :hover{
+    background: #1D4ED8;
+
+    transform: translateY(-2px);
+}
+
+
+.copy-btn{
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 16px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:14px;
+
+}
+
+.copy-btn:hover{
+
+    background:#1D4ED8;
+
+}
+
+.results-container{
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:50px auto;
+
+    padding:0 20px;
+
+}
+
+.page-header{
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.page-header h1{
+    font-size: 2rem;
+
+    margin-bottom: 10px;
+}
+
+.filename{
+    color: 6b7280;
+
+    margin-bottom: 10px;
+}
+
+.question-count{
+    font-weight: 600;
+
+    color: #2563eb;
+}
+
+.paper-preview{
+
+    border-radius: 18px;
+
+    padding: 20px;
+
+    margin-bottom: 35px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+.paper-preview summary{
+    cursor: pointer;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.paper-preview img{
+    width: 100%;
+
+    border-radius: 12px;
+
+    margin-top:  20px;
+}
+
+.section-title{
+    margin-bottom: 25px;
+
+    font-size: 1.6rem;
+}
+
+.question-card{
+   
+    border-radius: 18px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    transition: .25s;
+}
+
+.question-card:hover{
+    transform: translateY(-3px);
+}
+
+.question-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.question-meta{
+
+    display:flex;
+
+    gap:12px;
+}
+
+.question-meta span{
+
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    background:#EEF4FF;
+
+    color:#2563EB;
+
+    font-weight:600;
+
+    font-size:14px;
+}
+
+.question-body,.answer-body{
+    margin-top: 20px;
+}
+
+.question-body h3, .answer-body h3{
+    margin-bottom: 12px;
+
+    color: #111827;
+}
+
+.question-body p{
+    line-height: 1.7;
+}
+
+.answer-body{
+    line-height: 1.8;
+}
+
+
+.page-header,
+.paper-preview,
+.question-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.page-header{
+
+    margin-bottom:35px;
+
+}
+
+.paper-preview{
+
+    margin-bottom:45px;
+
+}
+.paper-preview img{
+        display:block;
+
+    width:100%;
+
+    max-width:700px;
+
+    margin:20px auto 0;
+
+    border-radius:15px;
+}
+
+.section-title{
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.question-card{
+
+    margin-bottom:30px;
+
+}
+
+details summary{
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    list-style:none;
+
+}
+
+details summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+/* bubbles */
+
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* size + color + position per bubble */
+.c1  { width: 140px; height: 140px; background: rgba(99, 154, 255, 0.05);  left: 5%;  top: 60%; }
+.c2  { width: 100px; height: 100px; background: rgba(168, 130, 255, 0.08); left: 70%; top: 8%; }
+.c3  { width: 80px;  height: 80px;  background: rgba(80, 220, 170, 0.09);  left: 40%; top: 78%; }
+.c4  { width: 120px; height: 120px; background: rgba(255, 200, 60, 0.05);   left: 87%; top: 55%; }
+.c5  { width: 60px;  height: 60px;  background: rgba(255, 130, 160, 0.07); left: 18%; top: 10%; }
+.c6  { width: 50px;  height: 50px;  background: rgba(99, 154, 255, 0.08);   left: 45%; top: 4%; }
+.c7  { width: 90px;  height: 90px;  background: rgba(80, 220, 170, 0.08);  left: 3%;  top: 20%; }
+.c8  { width: 40px;  height: 40px;  background: rgba(255, 130, 160, 0.09); left: 92%; top: 15%; }
+.c9  { width: 70px;  height: 70px;  background: rgba(168, 130, 255, 0.12); left: 25%; top: 92%; }
+.c10 { width: 55px;  height: 55px;  background: rgba(255, 200, 60, 0.08);  left: 60%; top: 88%; }
+.c11 { width: 35px;  height: 35px;  background: rgba(99, 154, 255, 0.08);  left: 78%; top: 30%; }
+.c12 { width: 75px;  height: 75px;  background: rgba(80, 220, 170, 0.09);  left: 12%; top: 45%; }
+.c13 { width: 45px;  height: 45px;  background: rgba(255, 130, 160, 0.12); left: 55%; top: 35%; }
+
+/* animation durations, staggered so nothing syncs up */
+.c1  { animation-duration: 22s; }
+.c2  { animation-duration: 26s; }
+.c3  { animation-duration: 19s; }
+.c4  { animation-duration: 30s; }
+.c5  { animation-duration: 17s; }
+.c6  { animation-duration: 24s; }
+.c7  { animation-duration: 28s; }
+.c8  { animation-duration: 16s; }
+.c9  { animation-duration: 21s; }
+.c10 { animation-duration: 23s; }
+.c11 { animation-duration: 18s; }
+.c12 { animation-duration: 25s; }
+.c13 { animation-duration: 20s; }
+
+.float1, .float2, .float3 {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.float1 { animation-name: float1; }
+.float2 { animation-name: float2; }
+.float3 { animation-name: float3; }
+.reverse { animation-direction: reverse; }
+
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(40px, -30px) scale(1.1); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-35px, 25px) scale(0.95); }
+}
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(25px, 30px) scale(1.15); }
+}

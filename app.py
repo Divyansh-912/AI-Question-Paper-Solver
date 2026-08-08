@@ -17,6 +17,10 @@ PDF_FOLDER = os.path.join(app.root_path,"generated_pdfs")
 TEMP_FOLDER = os.path.join(app.root_path,"temp")
 
 os.makedirs(TEMP_FOLDER, exist_ok=True)
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(PDF_FOLDER, exist_ok=True)
+os.makedirs(TEMP_FOLDER, exist_ok=True)
+
 
 @app.route("/")
 def home():
@@ -105,7 +109,7 @@ def uploaded_file(filename):
 
 @app.route("/download-pdf")
 def download_pdf():
-    print(session)
+   
 
     results_file =  session.get("results_file")
     results_path = os.path.join(
@@ -132,6 +136,6 @@ def download_pdf():
     )
 
 if __name__ == "__main__":
-    app.run
+    app.run(host="0.0.0.0", port=5000)
 
 

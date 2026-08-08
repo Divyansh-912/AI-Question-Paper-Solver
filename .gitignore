@@ -5,6 +5,7 @@ __pycache__/
 uploads/
 generated_pdfs/
 temp/
+samples/
 
 .vscode/
 *.pyc

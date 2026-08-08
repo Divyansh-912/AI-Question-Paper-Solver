@@ -4,6 +4,11 @@ An AI-powered web application that extracts questions from an uploaded question 
 
 
 ---
+## 🌐 Live Demo
+
+https://ai-question-paper-solver.onrender.com/
+
+---
 
 ## ✨ Features
 
